@@ -1,6 +1,7 @@
-Create database MercaLibre5819;
+CREATE database MercaLibre5819;
 
-USE MercaLibre5819;
+USE MercaLibre5819
+;
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -11,7 +12,7 @@ CREATE TABLE Compra
 (
 	idCompra INTEGER NOT NULL,
 	idProducto INTEGER NOT NULL,
-	idUsuario INTEGER NOT NULL,
+	idUsuario SMALLINT NOT NULL,
 	fechaHora DATETIME NOT NULL,
 	CantUnidades TINYINT NOT NULL,
 	PrecioCompra FLOAT(0) NOT NULL,
@@ -28,7 +29,7 @@ CREATE TABLE Producto
 	precio FLOAT(0) NOT NULL,
 	cantidad INTEGER NOT NULL,
 	nombreProducto VARCHAR(45) NOT NULL,
-	idVendedor  INTEGER NOT NULL,
+	idVendedor  SMALLINT NOT NULL,
 	fechaPublicacion DATE NOT NULL,
 	PRIMARY KEY (idProducto),
 	KEY (idVendedor )
@@ -38,7 +39,7 @@ CREATE TABLE Producto
 
 CREATE TABLE Usuario 
 (
-	idUsuario INTEGER NOT NULL,
+	idUsuario SMALLINT NOT NULL,
 	nombre VARCHAR(45) NOT NULL,
 	apellido VARCHAR(45) NOT NULL,
 	telefono TINYINT NOT NULL,
