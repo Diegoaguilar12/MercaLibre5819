@@ -13,4 +13,19 @@ begin
       and fechaHora between cotainf and cotasup;
       return suma_recaudado;
 end//
-      
+
+Create function recaudacionTotal (unidVendedor smallint,
+								  CotaInf Datetime,
+                                  CotaSup datetime)
+                                  returns float
+                                  
+begin 
+declare VentasDeCliente float;
+Select Sum(recaudacionPara(idProducto,CotaInf, CotaSup)) into VentasDeCliente
+From Producto
+Where idVendedor = unidVendedor;
+
+return VentasDeCliente;
+
+
+end//      
