@@ -18,8 +18,12 @@ namespace MercaLibre58
         public byte cantUnidades { get; set; }
         [Column("Fecha y Hora"),Required]
         public DateTime fechaHora { get; set; }
-        [ForeignKey]
+        [ForeignKey("Producto")]
+        [Column("Producto"),Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Producto producto { get; set; }
+        [ForeignKey("Usuario")]
+        [Column("Usuario"),Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Usuario usuario { get; set; }
 
     }
 }
