@@ -28,12 +28,13 @@ namespace MercaLibre58
         public Usuario():base()
         {
 
-        }
-        
-       
+        }   
         public void Comprar(Producto producto, int cant)
-        {
-            Compra compra = new Compra();
+        {           
+            
+           
         }
+
+
     }
 }

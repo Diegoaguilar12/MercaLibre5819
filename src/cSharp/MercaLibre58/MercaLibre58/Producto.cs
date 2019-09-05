@@ -16,7 +16,7 @@ namespace MercaLibre58
         [Column("nombreProducto"),Required,StringLength(45)]
         public string nombreProducto { get; set; }
         [Column("precio"),Required]
-        public float precio { get; set; }
+        public float precioProducto { get; set; }
         [ForeignKey("Vendedor")]
         [Column("vendedor"),Required]
         public Usuario Vendedor { get; set; }
@@ -24,5 +24,6 @@ namespace MercaLibre58
         {
                
         }
+        
     }
 }

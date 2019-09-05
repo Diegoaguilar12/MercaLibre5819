@@ -24,6 +24,9 @@ namespace MercaLibre58
         [ForeignKey("Usuario")]
         [Column("Usuario"),Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Usuario usuario { get; set; }
+        [NotMapped]
+        public float TotalPrecio => cantUnidades * precioCompra;
+        
 
     }
 }
