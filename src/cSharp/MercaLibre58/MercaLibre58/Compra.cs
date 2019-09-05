@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MercaLibre58
 {
     [Table ("Compra")]
-    class Compra
+    public class Compra
     {
         [Key]
         [Column ("idCompra"), Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
