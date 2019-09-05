@@ -4,7 +4,11 @@ using System.Text;
 
 namespace MercaLibre58
 {
-    class Abstract
+    public abstract class Abstract
     {
+        public void ListaCompras()
+        {
+            
+        }
     }
 }
