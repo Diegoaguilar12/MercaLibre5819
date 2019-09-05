@@ -6,14 +6,17 @@ namespace MercaLibre58
 {
     public abstract class EnteConCompras
     {
+        public List<Compra> Compras { get; set; }
         public EnteConCompras()
         {
-
+            Compras = new List<Compra>();
         }
-        public List<Compra>Compras { get; set; }
-        public void ListaCompras()
+        public void agregarCompra( Compra kompra)
         {
-            
+            Compras.Add(kompra);
         }
+        
+        
+        
     }
 }
