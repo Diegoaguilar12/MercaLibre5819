@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MercaLibre58
 {  
     [Table ("Usuario")]
-    class Usuario
+    public class Usuario:EnteConCompras
     {
         [Key]
         [Column ("IdUsuario"),Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,6 +25,11 @@ namespace MercaLibre58
         public string ContraseñaUsuario { get; set; }
         [Column("Email"),Required,StringLength(100)]
         public string Email { get; set; }
+        public Usuario():base()
+        {
+
+        }
+        
        
         public void Comprar(Producto producto, int cant)
         {

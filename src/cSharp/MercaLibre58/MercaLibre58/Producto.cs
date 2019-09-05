@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MercaLibre58
 {
     [Table ("Producto")]
-    class Producto
+    public class Producto:EnteConCompras
     {
         [Key,Column("idProducto"),DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idProducto { get; set; }
@@ -17,9 +17,12 @@ namespace MercaLibre58
         public string nombreProducto { get; set; }
         [Column("precio"),Required]
         public float precio { get; set; }
+        [ForeignKey("Vendedor")]
         [Column("vendedor"),Required]
-        public Usuario vendedor { get; set; }
-        public List<Compra> Compras { get; set; }
+        public Usuario Vendedor { get; set; }
+        public Producto() : base()
+        {
+               
+        }
     }
 }
-
