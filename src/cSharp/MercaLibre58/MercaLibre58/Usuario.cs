@@ -30,9 +30,12 @@ namespace MercaLibre58
 
         }   
         public void Comprar(Producto producto, int cant)
-        {           
+        {
+            CompraVenta compra = new CompraVenta(cant, this, producto);
             
-           
+            agregarCompra(compra);
+            producto.cantidad -= cant;
+            
         }
 
 

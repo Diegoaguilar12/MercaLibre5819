@@ -9,7 +9,7 @@ namespace MercaLibre58
     class MySQL_ADO: DbContext
 
     {
-        public DbSet<Compra>Compras
+        public DbSet<CompraVenta>Compras
         { get; set; }
 
         public DbSet<Producto>Productos
@@ -17,7 +17,7 @@ namespace MercaLibre58
         public DbSet<Usuario>Usuarios
         { get; set; }
 
-        public void AltaCompra(Compra compras)
+        public void AltaCompra(CompraVenta compras)
         {
             Compras.Add(compras);
             SaveChanges();
