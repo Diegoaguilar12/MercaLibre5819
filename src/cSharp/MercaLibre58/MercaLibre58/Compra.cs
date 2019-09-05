@@ -10,7 +10,7 @@ namespace MercaLibre58
     class Compra
     {
         [Key]
-        [Column ("idCompra"), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column ("idCompra"), Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idCompra { get; set; }
         [Column("Precio Compra"),Required]
         public float precioCompra { get; set; }
