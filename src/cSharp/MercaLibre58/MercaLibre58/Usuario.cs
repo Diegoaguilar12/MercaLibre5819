@@ -26,6 +26,9 @@ namespace MercaLibre58
         [Column("Email"),Required,StringLength(100)]
         public string Email { get; set; }
        
-        
+        public void Comprar(Producto producto, int cant)
+        {
+            Compra compra = new Compra();
+        }
     }
 }
