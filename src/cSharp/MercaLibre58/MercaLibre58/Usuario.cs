@@ -37,9 +37,11 @@ namespace MercaLibre58
                 producto.DecrementarCant(cant);
             }
         }
-        public float RecaudacionTotal(DateTime inicio, DateTime fin)
+        //public float TotalTicket => Items.Sum(item => item.TotalItem);
+        public float RecaudacionTotal=>
+        public float RecaudacionTotal(DateTime inicio, DateTime fin, Producto productos)
         {
-            return  FindAll(rt => rt.Entre(inicio, fin)).Sum(rct => rct.TotalPrecio);
+            return  productos.RecaudacionPara.FindAll(rt => rt.Entre(inicio, fin)).Sum(rct => rct.TotalPrecio);
         }
         /*public float precioPromedioEntre(DateTime inicio, DateTime fin)
         {
