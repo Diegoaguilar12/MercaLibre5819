@@ -8,8 +8,7 @@ namespace MercaLibre58
     [Table("Usuario")]
     public class Usuario : EnteConCompras
     {
-        [Key]
-        [Column("IdUsuario"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column("IdUsuario"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdUsuario { get; set; }
         [Column("Nombre"), Required, StringLength(45)]
         public string Nombre { get; set; }

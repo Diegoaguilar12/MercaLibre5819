@@ -10,8 +10,7 @@ namespace MercaLibre58
     [Table("CompraVenta")]
     public class CompraVenta
     {
-        [Key]
-        [Column("idCompraVenta"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column ("idCompraVenta"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Column("Precio CompraVenta"), Required]
         public float Precio { get; set; }
@@ -19,11 +18,17 @@ namespace MercaLibre58
         public int CantUnidades { get; set; }
         [Column("Fecha y Hora"), Required]
         public DateTime FechaHora { get; set; }
+<<<<<<< HEAD
         [ForeignKey("Producto")]
         [ Required]
         public Producto Producto { get; set; }
         [ForeignKey("Usuario")]
         [Required]
+=======
+        [ForeignKey("Producto"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Producto Producto { get; set; }
+        [ForeignKey("Usuario"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+>>>>>>> c2915b7bdd0735c8993c8e8ca4f51ba397551197
         public Usuario Usuario{ get; set; }
         [NotMapped]
         public float TotalPrecio => CantUnidades * Precio;
