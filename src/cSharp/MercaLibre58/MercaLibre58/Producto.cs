@@ -34,10 +34,10 @@ namespace MercaLibre58
 
         public float RecaudacionPara(DateTime inicio, DateTime fin)
         {
-            return comprasVentasEntre(inicio, fin).Sum(h => h.Precio);
+            return ComprasVentasEntre(inicio, fin).Sum(h => h.Precio);
         }
 
-        private List<CompraVenta> comprasVentasEntre(DateTime inicio, DateTime fin)
+        private List<CompraVenta> ComprasVentasEntre(DateTime inicio, DateTime fin)
         {
             return CompraVentas.FindAll(r => r.Entre(inicio, fin));
         }
