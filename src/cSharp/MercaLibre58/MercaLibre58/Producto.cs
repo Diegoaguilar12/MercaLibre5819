@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -30,17 +29,13 @@ namespace MercaLibre58
             Cantidad -= cant;
         }
 
-        public bool StockSuf(int cant) => cant <= this.Cantidad;
+        public bool StockSuficiente(int cant) => cant <= this.Cantidad;
 
         public float RecaudacionPara(DateTime inicio, DateTime fin)
         {
-            return comprasVentasEntre(inicio, fin).Sum(h => h.Precio);
+            return comprasVentasEntre(inicio, fin).Sum(cv => cv.TotalPrecio);
         }
 
-        private List<CompraVenta> comprasVentasEntre(DateTime inicio, DateTime fin)
-        {
-            return CompraVentas.FindAll(r => r.Entre(inicio, fin));
-        }
-
+        private List<CompraVenta> comprasVentasEntre(DateTime inicio, DateTime fin) => CompraVentas.FindAll(r => r.Entre(inicio, fin));
     }
 }
