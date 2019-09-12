@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace MercaLibre58
 {
@@ -17,23 +18,26 @@ namespace MercaLibre58
         public int CantUnidades { get; set; }
         [Column("Fecha y Hora"), Required]
         public DateTime FechaHora { get; set; }
-        [ForeignKey("Producto"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("Producto"), Required]
         public Producto Producto { get; set; }
-        [ForeignKey("Usuario"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [ForeignKey("Usuario"), Required]
         public Usuario Usuario{ get; set; }
         [NotMapped]
         public float TotalPrecio => CantUnidades * Precio;
         public List<Producto> Comprados { get; set; }
         public List<Producto> Vendidos { get; set; }
+        public bool Entre(DateTime inicio, DateTime fin)
+        {
+            return inicio <= FechaHora && FechaHora <= fin;
+        }
         public CompraVenta(int cant, Usuario usuario, Producto producto)
         {
             CantUnidades = cant;
             Usuario = usuario;
             Producto = producto;
-            FechaHora = DateTime.Now;
-
-            
+            FechaHora = DateTime.Now;   
         }
+
         
             
     }
