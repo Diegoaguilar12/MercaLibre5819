@@ -18,8 +18,10 @@ namespace MercaLibre58
         public int CantUnidades { get; set; }
         [Column("Fecha y Hora"), Required]
         public DateTime FechaHora { get; set; }
+
         [ForeignKey("Producto"), Required]
         public Producto Producto { get; set; }
+
         [ForeignKey("Usuario"), Required]
         public Usuario Usuario{ get; set; }
         [NotMapped]
