@@ -30,17 +30,18 @@ namespace MercaLibre58
             Cantidad -= cant;
         }
 
-        public bool StockSuf(int cant) => cant <= this.Cantidad;
+        public bool StockSuficiente(int cant) => cant <= this.Cantidad;
 
         public float RecaudacionPara(DateTime inicio, DateTime fin)
         {
             return ComprasVentasEntre(inicio, fin).Sum(h => h.Precio);
         }
-
-        private List<CompraVenta> ComprasVentasEntre(DateTime inicio, DateTime fin)
+            
+        public List<CompraVenta> ComprasVentasEntre(DateTime inicio, DateTime fin)
         {
-            return CompraVentas.FindAll(r => r.Entre(inicio, fin));
+            return ComprasVentas.FindAll(r => r.Entre(inicio, fin));
         }
+        
 
     }
 }

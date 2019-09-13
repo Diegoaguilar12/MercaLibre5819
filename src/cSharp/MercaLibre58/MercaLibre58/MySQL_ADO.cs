@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MercaLibre58
 {
-    class MySQL_ADO: DbContext
+    public class MySQL_ADO: DbContext
 
     {
         public DbSet<CompraVenta>Compras
@@ -35,7 +35,8 @@ namespace MercaLibre58
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=ForeverLand;user=root;password=root");
+            optionsBuilder.UseMySQL("server=localhost;database=MercaLibre58;user=root;password=root");
+            
         }
     }
 }
