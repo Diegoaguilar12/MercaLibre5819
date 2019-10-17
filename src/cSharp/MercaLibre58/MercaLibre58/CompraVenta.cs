@@ -34,6 +34,10 @@ namespace MercaLibre58
 
             
         }
+        public bool Entre ( DateTime inicio , DateTime fin)
+        {
+            return inicio <= FechaHora && FechaHora <= fin;
+        }
         
         
             
