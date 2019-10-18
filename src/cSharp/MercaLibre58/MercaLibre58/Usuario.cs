@@ -28,6 +28,8 @@ namespace MercaLibre58
         [Column("Email"), Required, StringLength(100)]
         public string Email { get; set; }
         public List<Producto> ProductoVendidos { get; set; }
+        [NotMapped]
+        public string NombreCompleto => $"{Apellido}, {Nombre}";
         public Usuario() : base()
         {
 

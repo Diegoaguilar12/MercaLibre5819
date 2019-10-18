@@ -18,7 +18,7 @@ namespace MercaLibre58
         public string NombreProducto { get; set; }
         [Column("precio"),Required]
         public float PrecioProducto { get; set; }
-        [ForeignKey("Vendedor"),Required]
+        [ForeignKey("idVendedor"),Required]
         public Usuario Vendedor { get; set; }
         public Producto() : base()
         {
@@ -41,7 +41,5 @@ namespace MercaLibre58
         {
             return ComprasVentas.FindAll(r => r.Entre(inicio, fin));
         }
-        
-
     }
 }

@@ -9,26 +9,33 @@ namespace MercaLibre58
     [Table("CompraVenta")]
     public class CompraVenta
     {
-        [Key,Column("idCompraVenta"), Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key,Column("idCompraVenta"),DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("Precio CompraVenta"), Required]
+        [Column("PrecioCompraVenta"), Required]
         public float Precio { get; set; }
-        [Column("Cantidad Unidades"), Required]
+        [Column("Cantidad"), Required]
         public int CantUnidades { get; set; }
-        [Column("Fecha y Hora"), Required]
+        [Column("fechayhora"), Required]
         public DateTime FechaHora { get; set; }
-        [ForeignKey("Producto"), Required]
+
+        [ForeignKey("idProducto"), Required]
         public Producto Producto { get; set; }
-        [ForeignKey("Usuario"), Required]
-        public Usuario Usuario{ get; set; }
+
+        [ForeignKey("idComprador"), Required]
+        public Usuario Comprador{ get; set; }
+
         [NotMapped]
         public float TotalPrecio => CantUnidades * Precio;
-        public List<Producto> Comprados { get; set; }
-        public List<Producto> Vendidos { get; set; }
+
+
+        public CompraVenta()
+        {
+
+        }
         public CompraVenta(int cant, Usuario usuario, Producto producto)
         {
             CantUnidades = cant;
-            Usuario = usuario;
+            Comprador = usuario;
             Producto = producto;
             FechaHora = DateTime.Now;
 

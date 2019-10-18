@@ -15,12 +15,7 @@ namespace UnitTestProject1
         {
             ADO = new MySQL_ADO();
             ADO.Database.EnsureDeleted();
-        }
-        [TestMethod]
-        public void TestMethod1()
-        {
             ADO.Database.EnsureCreated();
-
         }
 
         [TestMethod]
@@ -30,20 +25,37 @@ namespace UnitTestProject1
 
             string passEncriptada = EncryptProvider.Sha256("123456");
             string otraPass = EncryptProvider.Sha256("234567");
-            string email = "angeles.mejias22@gmail.com";
-            string otroEmail = "johannysmejias@gmail.com";
+            string nombreusuario = "aMejias";
+            string otronombreUsuario = "MejiasA";
+
 
             Usuario usuario = new Usuario()
             {
-                Email = email,
+                Email = "angeles.mejias22@gmail.com",
                 Nombre = "Angeles",
                 Apellido = "Mejias",
+                NombreUsuario = nombreusuario,
                 ContraseñaUsuario = passEncriptada
             };
 
             ADO.AltaUsuario(usuario);
             ADO = new MySQL_ADO();
-           
+
+            Usuario usuario2 = ADO.usuarioPorNomUsuarioPass(nombreusuario, otraPass);
+            Assert.IsNull(usuario2, nombreusuario);
+
+            Usuario usuario3 = ADO.usuarioPorNomUsuarioPass(otronombreUsuario, passEncriptada);
+            Assert.IsNull(usuario3, otronombreUsuario);
+
+            Usuario usuario4 = ADO.usuarioPorNomUsuarioPass(otronombreUsuario, otraPass);
+            Assert.IsNull(usuario4);
+
+            Usuario usuario5 = ADO.usuarioPorNomUsuarioPass(nombreusuario, passEncriptada);
+            Assert.IsNotNull(usuario5);
+
+            Assert.AreEqual("Mejias, Angeles", usuario5.NombreCompleto);
+                
+            
             
 
         }

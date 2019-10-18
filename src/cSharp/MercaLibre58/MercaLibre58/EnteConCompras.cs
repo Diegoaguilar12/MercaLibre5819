@@ -14,10 +14,8 @@ namespace MercaLibre58
         }
         public void agregarCompra( CompraVenta kompra)
         {
-            ComprasVentas.Add(kompra);
-            
-        }
-        
+            ComprasVentas.Add(kompra);            
+        }    
         
         
     }
