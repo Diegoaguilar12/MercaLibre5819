@@ -13,7 +13,7 @@ namespace UnitTestProject1
         [ClassInitialize]
         public static void SetUpClase(TestContext context)
         {
-            ADO = new MySQL_ADO();
+            ADO = FactoryAdoMySQL.GetAdoDesdeJson("AppSettings.json", "root");
             ADO.Database.EnsureDeleted();
             ADO.Database.EnsureCreated();
         }
@@ -21,7 +21,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void persistenciaUsuario()
         {
-            ADO = new MySQL_ADO();
+           
 
             string passEncriptada = EncryptProvider.Sha256("123456");
             string otraPass = EncryptProvider.Sha256("234567");
@@ -39,8 +39,7 @@ namespace UnitTestProject1
             };
 
             ADO.AltaUsuario(usuario);
-            ADO = new MySQL_ADO();
-
+            
             Usuario usuario2 = ADO.usuarioPorNomUsuarioPass(nombreusuario, otraPass);
             Assert.IsNull(usuario2, nombreusuario);
 
@@ -53,10 +52,7 @@ namespace UnitTestProject1
             Usuario usuario5 = ADO.usuarioPorNomUsuarioPass(nombreusuario, passEncriptada);
             Assert.IsNotNull(usuario5);
 
-            Assert.AreEqual("Mejias, Angeles", usuario5.NombreCompleto);
-                
-            
-            
+            Assert.AreEqual("Mejias, Angeles", usuario5.NombreCompleto);           
 
         }
         
