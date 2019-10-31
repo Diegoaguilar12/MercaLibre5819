@@ -17,6 +17,8 @@ namespace MercaLibre58
         public DbSet<Usuario>Usuarios
         { get; set; }
 
+        internal MySQL_ADO(DbContextOptions dbo) : base(dbo) { }
+
         public void AltaCompra(CompraVenta compras)
         {
             Compras.Add(compras);
@@ -32,13 +34,7 @@ namespace MercaLibre58
             Productos.Add(productos);
             SaveChanges();
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySQL("server=localhost;database=mercalibre58;user=root;password=root");
-            
-        }
-
+        
         public Usuario usuarioPorNomUsuarioPass(string nombreUsuario, string ContraseñaUsuarioEncriptada)
             => Usuarios.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.ContraseñaUsuario == ContraseñaUsuarioEncriptada);
     }
