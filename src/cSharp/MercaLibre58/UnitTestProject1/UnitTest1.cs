@@ -9,7 +9,6 @@ namespace UnitTestProject1
     {
         public static MySQL_ADO ADO { get; set; }
 
-
         [ClassInitialize]
         public static void SetUpClase(TestContext context)
         {
@@ -20,14 +19,11 @@ namespace UnitTestProject1
 
         [TestMethod]
         public void persistenciaUsuario()
-        {
-           
-
+        {        
             string passEncriptada = EncryptProvider.Sha256("123456");
             string otraPass = EncryptProvider.Sha256("234567");
             string nombreusuario = "aMejias";
             string otronombreUsuario = "MejiasA";
-
 
             Usuario usuario = new Usuario()
             {
@@ -53,8 +49,7 @@ namespace UnitTestProject1
             Assert.IsNotNull(usuario5);
 
             Assert.AreEqual("Mejias, Angeles", usuario5.NombreCompleto);           
-
         }
-        
+     
     }
 }

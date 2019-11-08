@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MercaLibre58", "MercaLibre58\MercaLibre58.csproj", "{729452F5-A089-43A1-8D7C-36B1BAD0F9B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{DEC6E22A-7D50-40E5-A597-0FBFBB48EE70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{DEC6E22A-7D50-40E5-A597-0FBFBB48EE70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramaUsuario", "ProgramaUsuario\ProgramaUsuario.csproj", "{F056342B-91B2-4073-894E-C0FE01F26C01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DEC6E22A-7D50-40E5-A597-0FBFBB48EE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC6E22A-7D50-40E5-A597-0FBFBB48EE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC6E22A-7D50-40E5-A597-0FBFBB48EE70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F056342B-91B2-4073-894E-C0FE01F26C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F056342B-91B2-4073-894E-C0FE01F26C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F056342B-91B2-4073-894E-C0FE01F26C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F056342B-91B2-4073-894E-C0FE01F26C01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
