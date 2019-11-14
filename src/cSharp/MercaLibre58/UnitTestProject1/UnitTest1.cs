@@ -14,9 +14,12 @@ namespace UnitTestProject1
         {
             ADO = FactoryAdoMySQL.GetAdoDesdeJson("AppSettings.json", "root");
             ADO.Database.EnsureDeleted();
+        }
+        [TestMethod]
+        public void SeCreaDB()
+        {
             ADO.Database.EnsureCreated();
         }
-
         [TestMethod]
         public void persistenciaUsuario()
         {        
