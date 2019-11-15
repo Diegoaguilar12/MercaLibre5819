@@ -20,9 +20,9 @@ namespace MercaLibre58
         [Column("Teléfono")]
         public int? Telefono { get; set; }
         
-        [Column("Nombre_Usuario"), Required, StringLength(100)]
+        [Column("Username"), Required, StringLength(100)]
         public string NombreUsuario { get; set; }
-        [Column("Contraseña_Usuario"), Required,]
+        [Column("Pass"), Required,]
         public string ContraseñaUsuario { get; set; }
         
         [Column("Email"), Required, StringLength(100)]
