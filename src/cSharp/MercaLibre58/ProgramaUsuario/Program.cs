@@ -8,10 +8,13 @@ namespace ProgramaUsuario
         static void Main(string[] args)
         {
             var menuAltaUsuario = new MenuAltaUsuario() { Nombre = "Registro" };
+            var menuInicioSesion = new MenuInicioSesion() { Nombre = "Inicio Sesion" };
 
             ///////////////////////////////////////////////////
             var menuUsuarios = new MenuCompuesto() { Nombre = "Usuario" };
             menuUsuarios.agregarMenu(menuAltaUsuario);
+            menuUsuarios.agregarMenu(menuInicioSesion);
+        
 
             ///////////////////////////////////////////////////
             var menuPrincipal = new MenuCompuesto() { Nombre = "Menu MERCA-LIBRE" };
