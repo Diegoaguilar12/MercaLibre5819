@@ -12,7 +12,7 @@ namespace ProgramaUsuario.Menu
         
         public override void  mostrar()
         {
-            var menuCambioInfo = new MenuCambiarInfo() { Nombre = "Cambio Informacion" };
+           
             base.mostrar();
 
             var nombreUsuario = prompt("Ingrese su nombre de usuario");
@@ -27,8 +27,15 @@ namespace ProgramaUsuario.Menu
             }
             else
             {
+                var menuCambioInfo = new MenuCambiarInfo() { Nombre = "Cambio Informacion" };
+                var menuAgregoProducto = new MenuAgregarProducto() { Nombre = "Agregar Producto Para Vender" };
+                menuCambioInfo.Usuario = usuario;
+                Console.WriteLine("\n"+"Inicio de sesion exitoso");
                 var menuPrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Principal Usuario" };
                 menuPrincipalUsuario.agregarMenu(menuCambioInfo);
+                menuPrincipalUsuario.agregarMenu(menuAgregoProducto);
+                menuPrincipalUsuario.mostrar();
+                
             }
 
             Console.ReadKey();

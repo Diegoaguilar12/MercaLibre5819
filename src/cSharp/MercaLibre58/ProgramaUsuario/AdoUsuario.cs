@@ -6,6 +6,8 @@ namespace ProgramaUsuario
     {
         public static MySQL_ADO ADO { get; set; } =
             FactoryAdoMySQL.GetAdoDesdeJson("AppSettings.json", "usuario");
+
+       
     }
 
 }

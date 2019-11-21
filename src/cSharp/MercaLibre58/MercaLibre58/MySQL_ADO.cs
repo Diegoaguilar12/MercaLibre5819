@@ -34,7 +34,12 @@ namespace MercaLibre58
             Productos.Add(productos);
             SaveChanges();
         }
-        
+        public void actualizarInfo(Usuario usuarios)
+        {
+            this.Attach<Usuario>(usuarios);
+            SaveChanges();
+
+        }
         public Usuario usuarioPorNomUsuarioPass(string nombreUsuario, string ContraseñaUsuarioEncriptada)
             => Usuarios.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.ContraseñaUsuario == ContraseñaUsuarioEncriptada);
     }
