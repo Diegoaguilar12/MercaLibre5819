@@ -38,7 +38,7 @@ namespace MercaLibre58
         {
             this.Attach<Usuario>(usuarios);
             SaveChanges();
-
+       
         }
         public Usuario usuarioPorNomUsuarioPass(string nombreUsuario, string ContraseñaUsuarioEncriptada)
             => Usuarios.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.ContraseñaUsuario == ContraseñaUsuarioEncriptada);
@@ -47,6 +47,14 @@ namespace MercaLibre58
             => Productos.
                Where(p => p.Vendedor == usuario).
                ToList();
+
+        public List<Producto> BuscarPor(string NombreDeProducto, Usuario Usuario)
+            => Productos.
+               Where(p => p.NombreProducto == NombreDeProducto && p.Vendedor != Usuario).
+               ToList(); 
+               
+               
+        
     }
 }
  

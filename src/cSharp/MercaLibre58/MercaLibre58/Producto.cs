@@ -41,5 +41,9 @@ namespace MercaLibre58
         {
             return ComprasVentas.FindAll(r => r.Entre(inicio, fin));
         }
+
+        public override string ToString()
+            => $"{NombreProducto} - Cantidad: {Cantidad} - ${PrecioProducto:0.00}c/u";
+        
     }
 }

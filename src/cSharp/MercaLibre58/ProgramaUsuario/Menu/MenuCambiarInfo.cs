@@ -35,7 +35,7 @@ namespace ProgramaUsuario
                 try
                 {
                     AdoUsuario.ADO.actualizarInfo(Usuario);
-                    Console.WriteLine("Producto actualizado con exito");
+                    Console.WriteLine("Usuario actualizado con exito");
                 }
                 catch (Exception e)
                 {

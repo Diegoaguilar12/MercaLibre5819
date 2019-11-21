@@ -40,12 +40,19 @@ namespace ProgramaUsuario.Menu
         {
             var menuCambioInfo = new MenuCambiarInfo() { Nombre = "Cambio Informacion" };
             var menuAgregoProducto = new MenuAgregarProducto() { Nombre = "Agregar Producto Para Vender" };
+            var menuListaProductos = new MenuProductosEnVenta() { Nombre = "Lista De Mis Productos En Venta" };
+            var menuModificarProductos = new MenuModificarProductosVenta() { Nombre = "Modificar Productos En Venta" };
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            menuModificarProductos.Usuario = Usuario;
+            menuListaProductos.Usuario = Usuario;
             menuAgregoProducto.Usuario = Usuario;
             menuCambioInfo.Usuario = Usuario;
-            Console.WriteLine("\n" + "Inicio de sesion exitoso");
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////
             MenuPrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Principal Usuario" };
             MenuPrincipalUsuario.agregarMenu(menuCambioInfo);
             MenuPrincipalUsuario.agregarMenu(menuAgregoProducto);
+            MenuPrincipalUsuario.agregarMenu(menuListaProductos);
+            MenuPrincipalUsuario.agregarMenu(menuModificarProductos);
         }
     }
 }
