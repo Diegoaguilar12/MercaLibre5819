@@ -52,7 +52,11 @@ namespace MercaLibre58
             return ProductoVendidos.Sum(pv => pv.RecaudacionPara(inicio, fin));
         }
        
-
+        public void AgregarProducto(Producto producto)
+        {
+            ProductoVendidos.Add(producto);
+            producto.Vendedor = this;
+        }
 
     }
 }

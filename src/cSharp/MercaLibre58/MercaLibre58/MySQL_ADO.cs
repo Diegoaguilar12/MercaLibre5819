@@ -42,6 +42,11 @@ namespace MercaLibre58
         }
         public Usuario usuarioPorNomUsuarioPass(string nombreUsuario, string ContraseñaUsuarioEncriptada)
             => Usuarios.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.ContraseñaUsuario == ContraseñaUsuarioEncriptada);
+
+        public List<Producto> ProductosEnVentaDe(Usuario usuario) 
+            => Productos.
+               Where(p => p.Vendedor == usuario).
+               ToList();
     }
 }
  
