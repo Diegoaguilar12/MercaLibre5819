@@ -42,17 +42,21 @@ namespace ProgramaUsuario.Menu
             var menuAgregoProducto = new MenuAgregarProducto() { Nombre = "Agregar Producto Para Vender" };
             var menuListaProductos = new MenuProductosEnVenta() { Nombre = "Lista De Mis Productos En Venta" };
             var menuModificarProductos = new MenuModificarProductosVenta() { Nombre = "Modificar Productos En Venta" };
+            var menuBuscarProducto = new BuscarProducto() { Nombre = "Buscar Producto " };
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            menuBuscarProducto.Usuario = Usuario;
             menuModificarProductos.Usuario = Usuario;
             menuListaProductos.Usuario = Usuario;
             menuAgregoProducto.Usuario = Usuario;
             menuCambioInfo.Usuario = Usuario;
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////
             MenuPrincipalUsuario = new MenuCompuesto() { Nombre = "Menu Principal Usuario" };
+            
             MenuPrincipalUsuario.agregarMenu(menuCambioInfo);
             MenuPrincipalUsuario.agregarMenu(menuAgregoProducto);
             MenuPrincipalUsuario.agregarMenu(menuListaProductos);
             MenuPrincipalUsuario.agregarMenu(menuModificarProductos);
+            MenuPrincipalUsuario.agregarMenu(menuBuscarProducto);
         }
     }
 }

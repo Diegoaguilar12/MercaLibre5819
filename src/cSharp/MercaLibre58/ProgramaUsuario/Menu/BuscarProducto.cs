@@ -18,10 +18,25 @@ namespace ProgramaUsuario.Menu
 
         public override void mostrar()
         {
-            var producto = seleccionarElemento();
-            var cantidad = ;
-            Usuario.Comprar(producto, cantidad );
+            Console.Clear();
+            Console.WriteLine("Busqueda Productos");
 
+            nombreProducto = prompt("Nombre a buscar");
+            var producto = seleccionarElemento();
+            var cantidad = Convert.ToInt16(prompt("Ingrese La Cantidad Que Desea"));
+
+            Usuario.Comprar(producto, cantidad);
+
+            try
+            {
+                AdoUsuario.ADO.actualizarInfo(Usuario);
+                Console.WriteLine("Operacion con exito");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"No se pudo modificar por: {e.InnerException.Message}");
+            }
+            Console.ReadKey();
         }
 
     }
