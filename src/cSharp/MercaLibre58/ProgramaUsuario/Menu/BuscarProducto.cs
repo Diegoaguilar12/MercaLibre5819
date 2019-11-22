@@ -30,11 +30,11 @@ namespace ProgramaUsuario.Menu
             try
             {
                 AdoUsuario.ADO.actualizarInfo(Usuario);
-                Console.WriteLine("Operacion con exito");
+                Console.WriteLine("Compra realizada con exito");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"No se pudo modificar por: {e.InnerException.Message}");
+                Console.WriteLine($"No se pudo comprar por: {e.InnerException.Message}");
             }
             Console.ReadKey();
         }

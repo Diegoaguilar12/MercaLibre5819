@@ -41,8 +41,7 @@ namespace MercaLibre58
             {
                 CompraVenta compra = new CompraVenta(cant, this, producto);
                 agregarCompra(compra);
-                producto.Vendedor.ProductoVendidos.Add(producto);
-                
+                producto.agregarCompra(compra);                
                 producto.DecrementarCant(cant);
             }
         }
