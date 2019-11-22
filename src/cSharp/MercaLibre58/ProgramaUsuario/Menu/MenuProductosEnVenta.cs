@@ -38,8 +38,6 @@ namespace ProgramaUsuario.Menu
             {
                 try
                 {
-                  
-
                     AdoUsuario.ADO.VentasDe(Producto);
                     MenuDe.mostrar();
                 }

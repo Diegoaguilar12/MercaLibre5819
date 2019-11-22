@@ -38,9 +38,9 @@ namespace MercaLibre58
             Comprador = usuario;
             Producto = producto;
             FechaHora = DateTime.Now;
-
-            
+            Precio = producto.PrecioProducto;            
         }
+
         public bool Entre ( DateTime inicio , DateTime fin)
         {
             return inicio <= FechaHora && FechaHora <= fin;

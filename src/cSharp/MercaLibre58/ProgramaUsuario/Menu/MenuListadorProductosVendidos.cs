@@ -11,7 +11,7 @@ namespace ProgramaUsuario.Menu
     {
         public  Producto Producto { get; set; }
 
-        public override void imprimirElemento(CompraVenta p) => Console.WriteLine("Fecha de Venta : " + p.FechaHora.ToShortDateString() + " Cantidad Vendidos : " + p.CantUnidades);
+        public override void imprimirElemento(CompraVenta p) => Console.WriteLine("Fecha de Venta : " + p.FechaHora.ToShortDateString() + " " + p.FechaHora.ToShortTimeString() + " Cantidad Vendidos : " + p.CantUnidades);
         public override List<CompraVenta> obtenerLista() => AdoUsuario.ADO.VentasDe(Producto);
         
 
