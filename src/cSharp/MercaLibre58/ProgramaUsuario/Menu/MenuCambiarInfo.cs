@@ -26,7 +26,7 @@ namespace ProgramaUsuario
             }
             if (preguntaCerrada("- ¿ Desea modificar su Contraseña ?" + "\n"))
             {
-                Usuario.ContraseñaUsuario = prompt(" - Ingrese nueva contraseña");
+                Usuario.ContraseñaUsuario = ReadPassword(" - Ingrese nueva contraseña");
                 Usuario.ContraseñaUsuario = EncryptProvider.Sha256(Usuario.ContraseñaUsuario);
                 cambio = true;
             }

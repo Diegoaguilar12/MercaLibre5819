@@ -17,7 +17,7 @@ namespace ProgramaUsuario.Menu
             base.mostrar();
 
             var nombreUsuario = prompt("Ingrese su nombre de usuario");
-            var contraseña = prompt("Ingrese contraseña");
+            var contraseña = ReadPassword("Ingrese contraseña");
             contraseña = EncryptProvider.Sha256(contraseña);
             Usuario = AdoUsuario.ADO.usuarioPorNomUsuarioPass(nombreUsuario, contraseña);
 

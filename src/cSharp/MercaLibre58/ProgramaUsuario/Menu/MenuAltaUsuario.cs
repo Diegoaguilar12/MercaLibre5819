@@ -17,7 +17,7 @@ namespace ProgramaUsuario.Menu
             var nombre = prompt("Ingrese su nombre");
             var apellido = prompt("Ingrese su apellido");
             var nombreUsuario = prompt("Ingrese su nombre de usuario");
-            var contraseña = prompt("Ingrese contraseña");
+            var contraseña = ReadPassword("Ingrese contraseña");
             contraseña = EncryptProvider.Sha256(contraseña);
 
             Usuario = new Usuario()
