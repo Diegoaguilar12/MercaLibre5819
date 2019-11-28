@@ -19,9 +19,11 @@ namespace MercaLibre58
         public float PrecioProducto { get; set; }
         [ForeignKey("idVendedor"),Required]
         public Usuario Vendedor { get; set; }
+        [Column("estado" , TypeName = "Tinyint"),Required]
+        public bool Estado { get; set; }
         public Producto() : base()
         {
-               
+            
         }
 
         public void DecrementarCant( int cant)
@@ -42,7 +44,7 @@ namespace MercaLibre58
         }
 
         public override string ToString()
-            => $"{NombreProducto} - Cantidad: {Cantidad} - ${PrecioProducto:0.00}c/u";
+            => $"{NombreProducto} - Cantidad: {Cantidad} - ${PrecioProducto:0.00}c/u" ;
         
     }
 }

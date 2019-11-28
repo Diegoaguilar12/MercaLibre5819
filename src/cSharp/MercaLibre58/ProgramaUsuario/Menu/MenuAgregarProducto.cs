@@ -23,7 +23,9 @@ namespace ProgramaUsuario.Menu
             {
                 NombreProducto = nombre,
                 PrecioProducto = precio,
-                Cantidad = cantidad
+                Cantidad = cantidad,
+                Estado = true
+                
                 
             }; 
 

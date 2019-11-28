@@ -50,7 +50,7 @@ namespace MercaLibre58
 
         public List<Producto> BuscarPor(string NombreDeProducto, Usuario Usuario)
             => Productos.
-               Where(p => p.NombreProducto == NombreDeProducto && p.Vendedor != Usuario).
+               Where(p => p.NombreProducto == NombreDeProducto && p.Vendedor != Usuario && p.Cantidad > 0).
                ToList();
 
         public List<CompraVenta> VentasDe(Producto producto)
